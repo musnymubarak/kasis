@@ -115,7 +115,7 @@ const Hero = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="hero-title"
             >
               {activeItem.title[0]}.<br />
@@ -133,7 +133,7 @@ const Hero = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
               className="hero-sub"
             >
               {activeItem.subtitle}
@@ -188,10 +188,10 @@ const Hero = () => {
                 exit="exit"
                 transition={{
                   type: 'spring',
-                  stiffness: 60,
-                  damping: 18,
-                  mass: 1,
-                  duration: 0.8,
+                  stiffness: 100,
+                  damping: 20,
+                  mass: 0.8,
+                  duration: 0.6,
                 }}
                 className="hero-main-image"
                 style={{ perspective: '1200px' }}
