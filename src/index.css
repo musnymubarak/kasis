@@ -94,7 +94,6 @@ button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  overflow-x: hidden;
 }
 
 .section {
@@ -351,18 +350,19 @@ h1, h2, h3, h4 {
   border-radius: 50px;
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(48px, 8vw, 100px);
-  line-height: 0.95;
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 0.9;
   color: var(--dark);
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+  margin-left: -4px; /* Visually align text with container edge due to font side-bearing */
 }
 
 .hero-title .accent {
@@ -370,10 +370,10 @@ h1, h2, h3, h4 {
 }
 
 .hero-sub {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--mid);
-  max-width: 500px;
-  margin-bottom: 64px;
+  max-width: 480px;
+  margin-bottom: 28px;
 }
 
 
@@ -383,7 +383,6 @@ h1, h2, h3, h4 {
     text-align: center;
     padding-bottom: 60px;
     width: 100%;
-    overflow: hidden;
   }
   
   .hero-title {
@@ -515,7 +514,8 @@ h1, h2, h3, h4 {
 
 @media (max-width: 600px) {
   .hero-visual-wrapper {
-    max-width: 300px;
+    width: 80%;
+    max-width: 260px;
     margin: 0 auto;
   }
 }
