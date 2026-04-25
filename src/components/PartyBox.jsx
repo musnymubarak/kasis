@@ -43,7 +43,7 @@ const PartyBox = () => {
                 <span className="currency">£</span>29<span className="decimal">.99</span>
               </div>
               <p className="party-card-text">Feeds the whole crew.<br />Big value, bigger flavours.</p>
-              <a href="tel:+447782761970" className="btn btn-primary">🎉 Order Now</a>
+              <a href="tel:07909045300" className="btn btn-primary">🎉 Order Now</a>
             </div>
             
             <div className="party-image-hint">

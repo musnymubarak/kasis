@@ -10,6 +10,7 @@ import PartyBox from './components/PartyBox';
 import KidsMenu from './components/KidsMenu';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,6 +37,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

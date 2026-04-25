@@ -48,24 +48,21 @@ const heroItems = [
 const wheelVariants = {
   enter: (direction) => ({
     rotateY: direction > 0 ? 90 : -90,
-    rotateZ: direction > 0 ? 15 : -15,
-    scale: 0.6,
+    rotateZ: direction > 0 ? 8 : -8,
+    scale: 0.5,
     opacity: 0,
-    x: direction > 0 ? 200 : -200,
   }),
   center: {
     rotateY: 0,
     rotateZ: 0,
     scale: 1,
     opacity: 1,
-    x: 0,
   },
   exit: (direction) => ({
     rotateY: direction > 0 ? -90 : 90,
-    rotateZ: direction > 0 ? -15 : 15,
-    scale: 0.6,
+    rotateZ: direction > 0 ? -8 : 8,
+    scale: 0.5,
     opacity: 0,
-    x: direction > 0 ? -200 : 200,
   }),
 };
 
@@ -147,7 +144,7 @@ const Hero = () => {
             className="hero-actions"
           >
             <a href="#menu" className="btn btn-primary">🍗 See Menu</a>
-            <a href="tel:+447782761970" className="btn btn-outline">Call & Order</a>
+            <a href="tel:07909045300" className="btn btn-outline">Call & Order</a>
           </motion.div>
 
           <div className="hero-selectors">
@@ -209,21 +206,6 @@ const Hero = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Floating Pills — outside AnimatePresence so they don't remount */}
-            <motion.div 
-              animate={{ y: [0, -12, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-              className="hero-pill hero-pill-1"
-            >
-              🔥 Freshly Cooked <span>Always</span>
-            </motion.div>
-            <motion.div 
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut', delay: 0.5 }}
-              className="hero-pill hero-pill-2"
-            >
-              ⭐ Big Flavours
-            </motion.div>
           </div>
         </div>
       </div>

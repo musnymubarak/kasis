@@ -1,8 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) { // scrolling down
+          setIsVisible(false);
+        } else { // scrolling up
+          setIsVisible(true);
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
+
+    if (!mobileMenuOpen) {
+      window.addEventListener('scroll', controlNavbar);
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY, mobileMenuOpen]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      setIsVisible(true);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: 'Menu', href: '#menu' },
@@ -12,14 +46,11 @@ const Navbar = ({ scrolled }) => {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''} ${!isVisible ? 'navbar-hidden' : ''}`}>
       <div className="container navbar-inner">
         {/* Logo */}
-        <a href="#" className="nav-logo">
-          <div className="nav-logo-icon">K</div>
-          <div className="nav-logo-text">
-            KASI'S <span>CHICKEN</span>
-          </div>
+        <a href="/" className="nav-logo">
+          <img src="/logo.png" alt="Kasi's Chicken Logo" className="logo-img" />
         </a>
 
         {/* Desktop Links */}
@@ -35,8 +66,8 @@ const Navbar = ({ scrolled }) => {
 
         {/* CTA */}
         <div className="nav-cta-desktop">
-          <a href="tel:+447782761970" className="btn btn-primary btn-small">
-            <Phone size={16} /> Order Now
+          <a href="tel:07909045300" className="btn btn-primary nav-btn">
+            Order Now
           </a>
         </div>
 
