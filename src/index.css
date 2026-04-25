@@ -791,6 +791,12 @@ h1, h2, h3, h4 {
   }
 }
 
+.promo-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .promo-contact-item {
   display: flex;
   align-items: center;

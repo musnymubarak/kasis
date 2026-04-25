@@ -88,7 +88,7 @@ const Navbar = ({ scrolled }) => {
             </li>
           ))}
           <li>
-            <a href="tel:+447782761970" className="btn btn-primary">
+            <a href="tel:07909045300" className="btn btn-primary">
               <Phone size={18} /> Call & Order
             </a>
           </li>

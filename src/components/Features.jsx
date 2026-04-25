@@ -64,7 +64,7 @@ const Features = () => {
                   <span>📍</span> 364 Middleton Road, Carshalton, SM5 1HA
                 </div>
                 <div className="promo-contact-item">
-                  <span>📞</span> +44 7782 761970
+                  <span>📞</span> <a href="tel:07909045300" style={{ color: 'inherit' }}>07909 045300</a>
                 </div>
               </div>
             </div>
