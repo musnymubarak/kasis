@@ -1,7 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const heroItems = [
+  {
+    id: 'combo',
+    name: 'Combo',
+    title: ['LEGENDARY', 'SHARING', 'COMBOS'],
+    subtitle: 'Get the ultimate Kasi\'s experience with our mega-value combos. Perfect for sharing, loaded with flavor, and crafted to satisfy every craving.',
+    image: '/combo_clean.png',
+    thumb: '/combo_clean.png',
+    accent: '#FF5E00',
+    gradient: 'linear-gradient(135deg, #fff5eb 0%, #ffebd6 40%, #ffe0cc 100%)'
+  },
   {
     id: 'chicken',
     name: 'Chicken',
@@ -44,32 +54,77 @@ const heroItems = [
   }
 ];
 
-// Wheel rotation: old item rotates out, new spins in from opposite side
+// Cinematic 3D Tactile Spring Wheel Animation
 const wheelVariants = {
   enter: (direction) => ({
-    rotateY: direction > 0 ? 90 : -90,
-    rotateZ: direction > 0 ? 8 : -8,
-    scale: 0.5,
+    rotateY: direction > 0 ? 120 : -120, // Dramatic 3D swing angle
+    rotateZ: direction > 0 ? 15 : -15,   // Playful rotational tilt
+    scale: 0.3,                          // Smooth deep depth scale
+    y: 60,                               // Organic slide from below
     opacity: 0,
+    filter: 'blur(8px)',                 // Cinematic motion blur
   }),
   center: {
     rotateY: 0,
     rotateZ: 0,
     scale: 1,
+    y: 0,
     opacity: 1,
+    filter: 'blur(0px)',
   },
   exit: (direction) => ({
-    rotateY: direction > 0 ? -90 : 90,
-    rotateZ: direction > 0 ? -8 : 8,
-    scale: 0.5,
+    rotateY: direction > 0 ? -120 : 120,
+    rotateZ: direction > 0 ? -15 : 15,
+    scale: 0.3,
+    y: -60,                              // Elegant dismiss upwards
     opacity: 0,
+    filter: 'blur(8px)',
   }),
 };
 
+// Staggered Title Cascade Animation
+const titleContainerVariants = {
+  enter: (direction) => ({
+    transition: { staggerChildren: 0.08, delayChildren: 0.05 }
+  }),
+  center: (direction) => ({
+    transition: { staggerChildren: 0.08, delayChildren: 0.05 }
+  }),
+  exit: (direction) => ({
+    transition: { staggerChildren: 0.05, staggerDirection: -1 } // Exits in reverse cascade order
+  })
+};
+
+const titleLineVariants = {
+  enter: (direction) => ({
+    opacity: 0,
+    y: direction > 0 ? 45 : -45, // Directional sliding cascade
+    filter: 'blur(6px)',
+  }),
+  center: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      type: 'spring',
+      stiffness: 90,  // Smoother and more elegant reveal
+      damping: 16,    // Cushioned deceleration
+      mass: 0.6
+    }
+  },
+  exit: (direction) => ({
+    opacity: 0,
+    y: direction > 0 ? -45 : 45,
+    filter: 'blur(6px)',
+    transition: { duration: 0.3, ease: 'easeIn' }
+  })
+};
+
+// Simple text slide animation (used for subtitle)
 const textSlideVariants = {
-  enter: { opacity: 0, y: 30, filter: 'blur(4px)' },
+  enter: { opacity: 0, y: 20, filter: 'blur(4px)' },
   center: { opacity: 1, y: 0, filter: 'blur(0px)' },
-  exit: { opacity: 0, y: -30, filter: 'blur(4px)' },
+  exit: { opacity: 0, y: -20, filter: 'blur(4px)' },
 };
 
 const Hero = () => {
@@ -82,6 +137,15 @@ const Hero = () => {
     setDirection(index > activeIndex ? 1 : -1);
     setActiveIndex(index);
   };
+
+  // Auto-slide every 5 seconds with seamless user-interaction reset
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDirection(1); // Auto-slide transitions rotate forward for a natural flow
+      setActiveIndex((prev) => (prev + 1) % heroItems.length);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [activeIndex]);
 
   return (
     <section className="hero">
@@ -105,20 +169,26 @@ const Hero = () => {
           
           {/* Animated title */}
           <AnimatePresence mode="wait" custom={direction}>
-            <motion.h1 
-              key={activeItem.id}
-              custom={direction}
-              variants={textSlideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="hero-title"
-            >
-              {activeItem.title[0]}.<br />
-              <span className="accent">{activeItem.title[1]}.</span><br />
-              <span className="stroke">{activeItem.title[2]}.</span>
-            </motion.h1>
+          <motion.h1 
+            key={activeItem.id}
+            custom={direction}
+            variants={titleContainerVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="hero-title"
+            style={{ display: 'flex', flexDirection: 'column' }}
+          >
+            <motion.span custom={direction} variants={titleLineVariants} className="title-line">
+              {activeItem.title[0]}.
+            </motion.span>
+            <motion.span custom={direction} variants={titleLineVariants} className="accent title-line">
+              {activeItem.title[1]}.
+            </motion.span>
+            <motion.span custom={direction} variants={titleLineVariants} className="stroke title-line">
+              {activeItem.title[2]}.
+            </motion.span>
+          </motion.h1>
           </AnimatePresence>
 
           {/* Animated subtitle */}
@@ -185,10 +255,10 @@ const Hero = () => {
                 exit="exit"
                 transition={{
                   type: 'spring',
-                  stiffness: 100,
-                  damping: 20,
-                  mass: 0.8,
-                  duration: 0.6,
+                  stiffness: 90,  // Slightly gentler spring stiffness for a relaxed, ultra-smooth sweep
+                  damping: 20,    // Fully cushioned organic deceleration
+                  mass: 0.8,      // Standard weight for smooth kinetic flow
+                  duration: 1.0,  // Slightly longer duration for premium smoothness
                 }}
                 className="hero-main-image"
                 style={{ perspective: '1200px' }}

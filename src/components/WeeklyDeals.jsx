@@ -42,7 +42,7 @@ const deals = [
 
 const WeeklyDeals = () => {
   return (
-    <section className="section" id="deals">
+    <section className="section bg-light" id="deals">
       <div className="container">
         <div className="deals-header">
           <div>

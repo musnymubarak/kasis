@@ -29,8 +29,8 @@ function App() {
       <main>
         <Hero />
         <Ticker />
-        <Features />
         <Menu />
+        <Features />
         <WeeklyDeals />
         <PartyBox />
         <KidsMenu />
