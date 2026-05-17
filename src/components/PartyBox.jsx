@@ -57,7 +57,7 @@ const PartyBox = () => {
               transition={{ type: "spring", stiffness: 100, damping: 15 }}
             >
               <img 
-                src="/images/Family/F5_faded.png" 
+                src="/images/Family/F5.png" 
                 alt="Party Box Platter Feast" 
                 className="freestyle-platter"
               />
