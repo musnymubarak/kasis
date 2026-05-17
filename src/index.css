@@ -933,6 +933,8 @@ h1, h2, h3, h4 {
   border: 1px solid var(--light);
   position: relative;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-card:hover {
@@ -993,16 +995,25 @@ h1, h2, h3, h4 {
   min-height: 40px;
 }
 
+.menu-card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .menu-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .menu-price-container {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .menu-price {
@@ -1018,7 +1029,6 @@ h1, h2, h3, h4 {
 
 .menu-price.meal {
   color: var(--dark);
-  font-size: 16px;
 }
 
 .price-type {
@@ -1041,21 +1051,7 @@ h1, h2, h3, h4 {
   color: var(--dark);
 }
 
-.menu-add-btn {
-  background-color: var(--dark);
-  color: var(--white);
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
-  transition: var(--transition);
-}
 
-.menu-add-btn:hover {
-  background-color: var(--red);
-}
 
 /* Deals */
 .deals-header {

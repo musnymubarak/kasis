@@ -214,16 +214,7 @@ const Menu = () => {
                         </div>
                       )}
                     </div>
-                    <button className="menu-add-btn" onClick={(e) => {
-                      const btn = e.currentTarget;
-                      const orig = btn.innerText;
-                      btn.innerText = '✓ Added!';
-                      btn.style.backgroundColor = '#2d6a4f';
-                      setTimeout(() => {
-                        btn.innerText = orig;
-                        btn.style.backgroundColor = '';
-                      }, 1500);
-                    }}>Add</button>
+
                   </div>
                 </div>
               </motion.div>
