@@ -8,6 +8,10 @@ import MenuPage from './pages/MenuPage';
 import DealsPage from './pages/DealsPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,10 +35,14 @@ function App() {
             <Route path="/deals" element={<DealsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
           </Routes>
         </main>
         <Footer />
         <ScrollToTop />
+        <CookieConsent />
       </div>
     </BrowserRouter>
   );

@@ -18,38 +18,66 @@ const FacebookIcon = ({ size = 20 }) => (
 
 const Footer = () => {
   return (
-    <footer className="footer bg-white">
+    <footer className="footer">
       <div className="container">
         <div className="footer-top">
-          <div className="footer-logo">
+          {/* Col 1: Brand & Social */}
+          <div className="footer-col-brand">
             <img src="/logo.png" alt="Kasi's Chicken Logo" className="logo-img footer-logo-img" />
+            <div className="footer-social">
+              <a href="https://instagram.com/kasis_chicken" target="_blank" rel="noopener noreferrer" className="social-link"><InstagramIcon size={18} /></a>
+              <a href="#" className="social-link"><FacebookIcon size={18} /></a>
+              <a href="tel:07909045300" className="social-link"><Phone size={18} /></a>
+            </div>
           </div>
           
-          <div className="footer-contact-summary">
-            <p>364, Middleton Road, Carshalton, SM5 1HA</p>
-            <p>07909 045300 / 020 8058 6656</p>
+          {/* Col 2: Find Us */}
+          <div className="footer-col-info">
+            <h4>Our Roost</h4>
+            <p>364, Middleton Road,</p>
+            <p>Carshalton, SM5 1HA</p>
+            <p className="footer-highlight-link" style={{ marginTop: '8px' }}>
+              <a href="tel:07909045300">07909 045300</a>
+            </p>
+            <p className="footer-highlight-link">
+              <a href="tel:02080586656">020 8058 6656</a>
+            </p>
           </div>
 
-          <nav className="footer-nav">
-            <Link to="/">Home</Link>
-            <Link to="/menu">Menu</Link>
-            <Link to="/deals">Deals</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
-          </nav>
-          
-          <div className="footer-social">
-            <a href="https://instagram.com/kasis_chicken" target="_blank" rel="noopener noreferrer" className="social-link"><InstagramIcon size={20} /></a>
-            <a href="#" className="social-link"><FacebookIcon size={20} /></a>
-            <a href="tel:07909045300" className="social-link"><Phone size={20} /></a>
+          {/* Col 3: Opening Hours */}
+          <div className="footer-col-info">
+            <h4>Opening Hours</h4>
+            <p>Monday – Sunday</p>
+            <p className="footer-time-highlight">11:00 AM – 11:00 PM</p>
+            <span className="footer-badge-pill">Collection &amp; Delivery</span>
+          </div>
+
+          {/* Col 4: Payments & Delivery Partners */}
+          <div className="footer-col-info">
+            <h4>Order Online</h4>
+            <p className="footer-partner-text">Available on Just Eat, Deliveroo &amp; Uber Eats</p>
+            <div className="footer-payment-badges">
+              <span className="payment-badge">Visa</span>
+              <span className="payment-badge">Mastercard</span>
+              <span className="payment-badge">Apple Pay</span>
+              <span className="payment-badge">Google Pay</span>
+              <span className="payment-badge">Cash</span>
+            </div>
           </div>
         </div>
         
         <div className="footer-bottom">
           <p className="footer-copy">© 2025 Kasi's Chicken, Carshalton. All rights reserved.</p>
           <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/cookie-policy">Cookie Policy</Link>
+            <Link to="/terms">Terms &amp; Conditions</Link>
+            <button 
+              onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-cookie-settings')); }} 
+              className="footer-cookie-btn"
+            >
+              Cookie Settings
+            </button>
           </div>
         </div>
       </div>
