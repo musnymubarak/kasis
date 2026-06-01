@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const heroItems = [
@@ -213,7 +214,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hero-actions"
           >
-            <a href="#menu" className="btn btn-primary">🍗 See Menu</a>
+            <Link to="/menu" className="btn btn-primary">🍗 See Menu</Link>
             <a href="tel:07909045300" className="btn btn-outline">Call & Order</a>
           </motion.div>
 
@@ -263,16 +264,9 @@ const Hero = () => {
                 className="hero-main-image"
                 style={{ perspective: '1200px' }}
               >
-                <motion.div 
-                  className="hero-plate" 
-                  style={{ background: `linear-gradient(135deg, ${activeItem.accent}ee, ${activeItem.accent}88)` }}
-                  animate={{ 
-                    boxShadow: `0 30px 80px ${activeItem.accent}44`
-                  }}
-                  transition={{ duration: 0.8 }}
-                >
+                <div className="hero-plate">
                   <img src={activeItem.image} alt={activeItem.name} />
-                </motion.div>
+                </div>
               </motion.div>
             </AnimatePresence>
 

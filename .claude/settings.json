@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -fsSL https://deb.nodesource.com/setup_20.x)",
+      "Bash(bash -)",
+      "Bash(apt-get install *)",
+      "Bash(npm -v)",
+      "Bash(rm -rf node_modules package-lock.json)",
+      "Bash(npm install *)",
+      "Bash(mkdir -p /var/www/kasis/src/pages && ls /var/www/kasis/src/pages)",
+      "Bash(npm run *)",
+      "Bash(curl -sk -o /dev/null -w '%{http_code}' https://kasischicken.com__TRACKED_VAR__)"
+    ],
+    "additionalDirectories": [
+      "/var/www/kasis/src"
+    ]
+  }
+}

@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
-        if (window.scrollY > lastScrollY && window.scrollY > 100) { // scrolling down
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
           setIsVisible(false);
-        } else { // scrolling up
+        } else {
           setIsVisible(true);
         }
         setLastScrollY(window.scrollY);
@@ -38,28 +40,37 @@ const Navbar = ({ scrolled }) => {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
-    { name: 'Menu', href: '#menu' },
-    { name: 'Deals', href: '#deals' },
-    { name: 'Kids', href: '#kids' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', to: '/' },
+    { name: 'Menu', to: '/menu' },
+    { name: 'Deals', to: '/deals' },
+    { name: 'About', to: '/about' },
+    { name: 'Contact', to: '/contact' },
   ];
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''} ${!isVisible ? 'navbar-hidden' : ''}`}>
       <div className="container navbar-inner">
         {/* Logo */}
-        <a href="/" className="nav-logo">
+        <Link to="/" className="nav-logo">
           <img src="/logo.png" alt="Kasi's Chicken Logo" className="logo-img" />
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <ul className="nav-links-desktop">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="nav-link">
+              <NavLink
+                to={link.to}
+                end={link.to === '/'}
+                className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
+              >
                 {link.name}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -82,9 +93,14 @@ const Navbar = ({ scrolled }) => {
         <ul className="nav-links-mobile">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="nav-link-mobile" onClick={() => setMobileMenuOpen(false)}>
+              <NavLink
+                to={link.to}
+                end={link.to === '/'}
+                className={({ isActive }) => `nav-link-mobile ${isActive ? 'nav-link-active' : ''}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {link.name}
-              </a>
+              </NavLink>
             </li>
           ))}
           <li>

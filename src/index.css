@@ -561,12 +561,9 @@ h1, h2, h3, h4 {
 .hero-plate {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(20px, 3.5vw, 36px); /* Responsive padding to allow the food image to scale larger */
-  transition: box-shadow 0.6s ease;
 }
 
 .hero-plate img {
@@ -906,23 +903,9 @@ h1, h2, h3, h4 {
 
 @media (max-width: 600px) {
   .menu-grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
+    grid-template-columns: 1fr;
     gap: 16px;
     padding: 10px 0 30px;
-    margin: 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .menu-grid::-webkit-scrollbar {
-    display: none;
-  }
-  .menu-grid .menu-card {
-    min-width: 280px;
-    max-width: 280px;
-    scroll-snap-align: center;
-    flex-shrink: 0;
   }
 }
 
@@ -1771,4 +1754,139 @@ h1, h2, h3, h4 {
     width: 45px;
     height: 45px;
   }
+}
+
+/* Multipage layout */
+.page-with-nav-offset {
+  padding-top: 100px;
+}
+
+@media (max-width: 1024px) {
+  .page-with-nav-offset {
+    padding-top: 90px;
+  }
+}
+
+/* Active nav link */
+.nav-link.nav-link-active {
+  color: var(--red);
+}
+
+.nav-link.nav-link-active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--red);
+  margin-top: 4px;
+  border-radius: 2px;
+}
+
+.nav-link-mobile.nav-link-active {
+  color: var(--red);
+}
+
+/* Home explore-card grid */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.explore-card {
+  display: block;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-decoration: none;
+  color: var(--dark);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.explore-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--red);
+}
+
+.explore-card-emoji {
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.explore-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+
+.explore-card-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.explore-card-desc {
+  color: #555;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.explore-card-cta {
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.5px;
+}
+
+/* About page highlights */
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 720px;
+  margin: 50px auto 0;
+}
+
+@media (max-width: 700px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.about-highlight {
+  text-align: center;
+  padding: 28px 20px;
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.about-highlight-num {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: -1px;
+}
+
+.about-highlight-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 4px;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 
 const InstagramIcon = ({ size = 20 }) => (
@@ -30,10 +31,11 @@ const Footer = () => {
           </div>
 
           <nav className="footer-nav">
-            <a href="#menu">Menu</a>
-            <a href="#deals">Deals</a>
-            <a href="#kids">Kids</a>
-            <a href="#contact">Contact</a>
+            <Link to="/">Home</Link>
+            <Link to="/menu">Menu</Link>
+            <Link to="/deals">Deals</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
           </nav>
           
           <div className="footer-social">

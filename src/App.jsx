@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Ticker from './components/Ticker';
-import Features from './components/Features';
-import Menu from './components/Menu';
-import WeeklyDeals from './components/WeeklyDeals';
-import PartyBox from './components/PartyBox';
-import KidsMenu from './components/KidsMenu';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import MenuPage from './pages/MenuPage';
+import DealsPage from './pages/DealsPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,21 +21,22 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <Navbar scrolled={scrolled} />
-      <main>
-        <Hero />
-        <Ticker />
-        <Menu />
-        <Features />
-        <WeeklyDeals />
-        <PartyBox />
-        <KidsMenu />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Navbar scrolled={scrolled} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<MenuPage />} />
+            <Route path="/deals" element={<DealsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </BrowserRouter>
   );
 }
 
