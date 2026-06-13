@@ -17,12 +17,12 @@ const menuData = {
     { name: 'B12. Beef Burger 1/2 Pounder', desc: 'Massive 1/2 lb flame-grilled beef burger stack — the ultimate classic.', price: '5.50', mealPrice: '7.99', image: '/images/Burgers/2/beef burger half.png', popular: true }
   ],
   chicken: [
-    { name: 'C1. 1 Piece Meal', desc: '1 piece of signature crispy fried chicken, regular fries, and a soft drink.', price: '3.99', image: '/images/Chicken/3pcs.png' },
-    { name: 'C2. 2 Piece Meal', desc: '2 pieces of signature crispy fried chicken, regular fries, and a soft drink.', price: '6.49', image: '/images/Chicken/3pcs.png', popular: true },
+    { name: 'C1. 1 Piece Meal', desc: '1 piece of signature crispy fried chicken, regular fries, and a soft drink.', price: '3.99', image: '/images/Chicken/1pcs.png' },
+    { name: 'C2. 2 Piece Meal', desc: '2 pieces of signature crispy fried chicken, regular fries, and a soft drink.', price: '6.49', image: '/images/Chicken/2pcs.jpeg', popular: true },
     { name: 'C3. 3 Piece Meal', desc: '3 pieces of signature crispy fried chicken, regular fries, and a soft drink.', price: '7.49', image: '/images/Chicken/3pcs.png' },
-    { name: 'C4. 6 Piece Meal', desc: '6 pieces of crispy chicken, 3 regular fries, and 2 drink cans.', price: '14.49', image: '/images/Chicken/chicken pieces.jpg', family: true },
-    { name: 'C5. 10 Piece Meal', desc: '10 pieces of crispy chicken, 4 regular fries, and a 1.5L bottle drink.', price: '19.99', image: '/images/Chicken/chicken pieces.jpg', family: true },
-    { name: 'C6. 14 Piece Meal', desc: '14 pieces of crispy chicken, 6 regular fries, and a 1.5L bottle drink.', price: '24.99', image: '/images/Chicken/chicken pieces.jpg', family: true },
+    { name: 'C4. 6 Piece Meal', desc: '6 pieces of crispy chicken, 3 regular fries, and 2 drink cans.', price: '14.49', image: '/images/Chicken/6pcs.png', family: true },
+    { name: 'C5. 10 Piece Meal', desc: '10 pieces of crispy chicken, 4 regular fries, and a 1.5L bottle drink.', price: '19.99', image: '/images/Chicken/6pcs.png', family: true },
+    { name: 'C6. 14 Piece Meal', desc: '14 pieces of crispy chicken, 6 regular fries, and a 1.5L bottle drink.', price: '24.99', image: '/images/Chicken/6pcs.png', family: true },
     { name: 'C7. Wings (3 pcs)', desc: '3 hot & spicy wings, perfect as a snack or a full meal.', price: '1.89', mealPrice: '3.99', image: '/images/Chicken/Wings.png' },
     { name: 'C7. Wings (6 pcs)', desc: '6 hot & spicy wings, perfect for sharing.', price: '3.50', mealPrice: '5.49', image: '/images/Chicken/Wings.png' },
     { name: 'C7. Wings (10 pcs)', desc: '10 hot & spicy wings of pure crispy pleasure.', price: '4.89', image: '/images/Chicken/Wings.png' },
@@ -32,8 +32,8 @@ const menuData = {
     { name: 'C9. Popcorn Chicken (Large)', desc: 'Large portion of crispy bite-sized popcorn chicken.', price: '5.99', image: '/images/Chicken/Popcorn.png' },
     { name: 'C10. Nuggets (6 pcs Meal)', desc: '6 pieces of nuggets served with regular fries and a drink.', price: '4.99', image: '/images/Chicken/Nuggets.png' },
     { name: 'C10. Nuggets (9 pcs Meal)', desc: '9 pieces of nuggets served with regular fries and a drink.', price: '5.99', image: '/images/Chicken/Nuggets.png' },
-    { name: 'C11. BBQ Wings (3 pcs)', desc: '3 pieces of wings coated in sweet BBQ glaze.', price: '2.99', mealPrice: '4.99', image: '/images/Chicken/Wings.png' },
-    { name: 'C11. BBQ Wings (6 pcs)', desc: '6 pieces of wings coated in sweet BBQ glaze.', price: '4.79', mealPrice: '6.79', image: '/images/Chicken/Wings.png' }
+    { name: 'C11. BBQ Wings (3 pcs)', desc: '3 pieces of wings coated in sweet BBQ glaze.', price: '2.99', mealPrice: '4.99', image: '/images/Chicken/Wings1.png' },
+    { name: 'C11. BBQ Wings (6 pcs)', desc: '6 pieces of wings coated in sweet BBQ glaze.', price: '4.79', mealPrice: '6.79', image: '/images/Chicken/Wings1.png' }
   ],
   wraps: [
     { name: 'R1. Wrap', desc: 'Soft flour tortilla wrapped with crispy chicken fillet and fresh salad.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/wrap.png' },
@@ -56,12 +56,12 @@ const menuData = {
     { name: '27. Rice Peri Box', desc: 'Seasoned savory rice topped with flame-grilled peri peri chicken and a drink.', price: '6.99', image: '/images/Noodles/Meal 3.png' }
   ],
   peri: [
-    { name: 'D1. Whole Peri Chicken', desc: 'Flame-grilled whole peri peri chicken, served with salad, regular fries, and a drink.', price: '10.99', mealPrice: '13.99', image: '/images/Peri Peri/D...png', popular: true },
-    { name: 'D2. Half Peri Chicken', desc: 'Flame-grilled half peri peri chicken, served with salad, regular fries, and a drink.', price: '7.49', mealPrice: '9.49', image: '/images/Peri Peri/DD.png' },
+    { name: 'D1. Whole Peri Chicken', desc: 'Flame-grilled whole peri peri chicken, served with salad, regular fries, and a drink.', price: '10.99', mealPrice: '13.99', image: '/images/Peri Peri/D.png', popular: true },
+    { name: 'D2. Half Peri Chicken', desc: 'Flame-grilled half peri peri chicken, served with salad, regular fries, and a drink.', price: '7.49', mealPrice: '9.49', image: '/images/Peri Peri/D.png' },
     { name: 'D3. Quarter Peri Chicken', desc: 'Flame-grilled quarter peri peri chicken, served with salad, regular fries, and a drink.', price: '5.49', mealPrice: '7.49', image: '/images/Peri Peri/D.png' },
-    { name: 'D4. 6 pcs Peri Wings', desc: '6 flame-marinated peri peri wings, served with regular fries and a drink.', price: '4.99', mealPrice: '6.99', image: '/images/Peri Peri/DD..png' },
-    { name: 'D5. 8 pcs Peri Wings', desc: '8 flame-marinated peri peri wings, served with regular fries and a drink.', price: '6.49', mealPrice: '7.99', image: '/images/Peri Peri/DD..png' },
-    { name: 'D6. 12 pcs Peri Wings', desc: '12 flame-marinated peri peri wings, served with regular fries and a drink.', price: '7.99', mealPrice: '10.49', image: '/images/Peri Peri/DD..png' }
+    { name: 'D4. 6 pcs Peri Wings', desc: '6 flame-marinated peri peri wings, served with regular fries and a drink.', price: '4.99', mealPrice: '6.99', image: '/images/Peri Peri/D...png' },
+    { name: 'D5. 8 pcs Peri Wings', desc: '8 flame-marinated peri peri wings, served with regular fries and a drink.', price: '6.49', mealPrice: '7.99', image: '/images/Peri Peri/D...png' },
+    { name: 'D6. 12 pcs Peri Wings', desc: '12 flame-marinated peri peri wings, served with regular fries and a drink.', price: '7.99', mealPrice: '10.49', image: '/images/Peri Peri/D...png' }
   ],
   family: [
     { name: 'F1. Family Meal', desc: '2 chicken fillet burgers, 2 cheese burgers, 4 regular fries, and a free bottle of drink.', price: '15.99', image: '/images/Family/F1.png', family: true },
@@ -76,13 +76,13 @@ const menuData = {
     { name: 'Chicken Doner Loaded Fries', desc: 'Golden crispy fries topped with savory chicken doner, melted cheese sauce, and signature sauces.', price: '4.99', image: '/images/Extras/chicken_doner_loaded_fries.png' }
   ],
   drinks_shakes: [
-    { name: 'KitKat Milkshake', desc: 'Creamy, rich milkshake blended with KitKat chocolate bars, topped with whipped cream.', price: '3.99', image: '/images/Drinks/kitkat_shake.png' },
-    { name: 'Oreo Milkshake', desc: 'Thick, creamy vanilla milkshake blended with Oreo cookies, topped with whipped cream.', price: '3.99', image: '/images/Drinks/oreo_shake.png', popular: true },
-    { name: 'Biscoff Milkshake', desc: 'Indulgent creamy milkshake blended with Lotus Biscoff spread and cookie crumbs.', price: '3.99', image: '/images/Drinks/biscoff_shake.png' },
-    { name: 'Pash "N" Shoot Smoothie', desc: 'A refreshing tropical blend of passion fruit, pineapple, and mango.', price: '3.99', image: '/images/Drinks/pash_shoot_smoothie.png' },
-    { name: 'Strawberry Split Smoothie', desc: 'Classic, sweet blend of fresh strawberries and bananas.', price: '3.99', image: '/images/Drinks/strawberry_split_smoothie.png' },
-    { name: 'Berry-Go-Round Smoothie', desc: 'A vibrant blend of blackberries, raspberries, and strawberries.', price: '3.99', image: '/images/Drinks/berry_go_round_smoothie.png' },
-    { name: 'Avo Go Go Smoothie', desc: 'Rich, creamy blend of nutrient-dense avocado, spinach, pear, and mint.', price: '3.99', image: '/images/Drinks/avo_go_go_smoothie.png' }
+    { name: 'KitKat Milkshake', desc: 'Creamy, rich milkshake blended with KitKat chocolate bars, topped with whipped cream.', price: '3.99', image: '/images/Drinks/KITKAT.png' },
+    { name: 'Oreo Milkshake', desc: 'Thick, creamy vanilla milkshake blended with Oreo cookies, topped with whipped cream.', price: '3.99', image: '/images/Drinks/OREO.png', popular: true },
+    { name: 'Biscoff Milkshake', desc: 'Indulgent creamy milkshake blended with Lotus Biscoff spread and cookie crumbs.', price: '3.99', image: '/images/Drinks/BISCOFF.png' },
+    { name: 'Pash "N" Shoot Smoothie', desc: 'A refreshing tropical blend of passion fruit, pineapple, and mango.', price: '3.99', image: '/images/Drinks/pashion.png' },
+    { name: 'Strawberry Split Smoothie', desc: 'Classic, sweet blend of fresh strawberries and bananas.', price: '3.99', image: '/images/Drinks/strawberry.png' },
+    { name: 'Berry-Go-Round Smoothie', desc: 'A vibrant blend of blackberries, raspberries, and strawberries.', price: '3.99', image: '/images/Drinks/berry.png' },
+    { name: 'Avo Go Go Smoothie', desc: 'Rich, creamy blend of nutrient-dense avocado, spinach, pear, and mint.', price: '3.99', image: '/images/Drinks/avacado.png' }
   ],
   extras: [
     { name: 'Regular Fries', desc: 'Hot, crispy, golden potato fries.', price: '1.99', image: '/images/Extras/fries.png' },
@@ -148,7 +148,7 @@ const gridVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20, scale: 0.96 },
-  visible: { 
+  visible: {
     opacity: 1, y: 0, scale: 1,
     transition: { type: 'spring', stiffness: 100, damping: 16 },
   },
@@ -168,7 +168,7 @@ const Menu = () => {
 
         <div className="menu-tabs">
           {Object.keys(menuData).map((tab) => (
-            <button 
+            <button
               key={tab}
               className={`menu-tab ${activeTab === tab ? 'active' : ''}`}
               onClick={() => setActiveTab(tab)}
@@ -179,7 +179,7 @@ const Menu = () => {
         </div>
 
         <AnimatePresence mode="wait">
-          <motion.div 
+          <motion.div
             key={activeTab}
             variants={gridVariants}
             initial="hidden"
@@ -188,7 +188,7 @@ const Menu = () => {
             className="menu-grid"
           >
             {menuData[activeTab].map((item, i) => (
-              <motion.div 
+              <motion.div
                 key={item.name}
                 variants={cardVariants}
                 className="menu-card"
