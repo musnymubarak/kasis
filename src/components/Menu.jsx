@@ -18,7 +18,7 @@ const menuData = {
   ],
   chicken: [
     { name: 'C1. 1 Piece Meal', desc: '1 piece of signature crispy fried chicken, regular fries, and a soft drink.', price: '3.99', image: '/images/Chicken/1pcs.png' },
-    { name: 'C2. 2 Piece Meal', desc: '2 pieces of signature crispy fried chicken, regular fries, and a soft drink.', price: '6.49', image: '/images/Chicken/2pcs.jpeg', popular: true },
+    { name: 'C2. 2 Piece Meal', desc: '2 pieces of signature crispy fried chicken, regular fries, and a soft drink.', price: '6.49', image: '/images/Chicken/2pcs.png', popular: true },
     { name: 'C3. 3 Piece Meal', desc: '3 pieces of signature crispy fried chicken, regular fries, and a soft drink.', price: '7.49', image: '/images/Chicken/3pcs.png' },
     { name: 'C4. 6 Piece Meal', desc: '6 pieces of crispy chicken, 3 regular fries, and 2 drink cans.', price: '14.49', image: '/images/Chicken/6pcs.png', family: true },
     { name: 'C5. 10 Piece Meal', desc: '10 pieces of crispy chicken, 4 regular fries, and a 1.5L bottle drink.', price: '19.99', image: '/images/Chicken/6pcs.png', family: true },
