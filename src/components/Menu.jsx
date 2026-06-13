@@ -37,7 +37,7 @@ const menuData = {
   ],
   wraps: [
     { name: 'R1. Wrap', desc: 'Soft flour tortilla wrapped with crispy chicken fillet and fresh salad.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/wrap.png' },
-    { name: 'R2. Spicy Wrap', desc: 'Fiery spicy chicken fillet wrap with fresh salad and spicy sauce.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/Spicy wrap meal.png' },
+    { name: 'R2. Spicy Wrap', desc: 'Fiery spicy chicken fillet wrap with fresh salad and spicy sauce.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/Spicy wrap.png' },
     { name: 'R3. Peri Peri Wrap', desc: 'Flame-marinated peri peri chicken wrap with fresh salad.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/periperi wrap.png' },
     { name: 'R4. Lamb Doner Wrap', desc: 'Tender lamb doner inside a soft tortilla wrap with salad.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/lamb doner.png' },
     { name: 'R5. Veggi Wrap', desc: 'Healthy vegetable wrap filled with fresh salad and savory sauce.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/veggi wrap.png' },
