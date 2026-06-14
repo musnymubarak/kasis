@@ -859,21 +859,30 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 600px) {
-  .menu-tabs {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 10px 0;
-    margin: 10px 0 20px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+  .section {
+    padding: 40px 0;
   }
-  .menu-tabs::-webkit-scrollbar {
+  .menu-sub-desc {
     display: none;
   }
+  .menu-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px 0 20px;
+    width: 100%;
+  }
   .menu-tabs .menu-tab {
+    width: 100%;
+    text-align: center;
+    padding: 12px 6px;
+    font-size: clamp(11px, 3.2vw, 13px);
     white-space: nowrap;
-    flex-shrink: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -968,6 +977,7 @@ h1, h2, h3, h4 {
 .menu-card-title {
   font-size: 18px;
   margin-bottom: 8px;
+  min-height: 54px; /* Ensure 2 lines alignment */
 }
 
 .menu-card-desc {
@@ -975,7 +985,7 @@ h1, h2, h3, h4 {
   color: var(--mid);
   line-height: 1.5;
   margin-bottom: 20px;
-  min-height: 40px;
+  min-height: 80px; /* Ensure 4 lines alignment */
 }
 
 .menu-card-content {

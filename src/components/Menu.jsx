@@ -37,7 +37,7 @@ const menuData = {
   ],
   wraps: [
     { name: 'R1. Wrap', desc: 'Soft flour tortilla wrapped with crispy chicken fillet and fresh salad.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/wrap.png' },
-    { name: 'R2. Spicy Wrap', desc: 'Fiery spicy chicken fillet wrap with fresh salad and spicy sauce.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/Spicy wrap.png' },
+    { name: 'R2. Spicy Wrap', desc: 'Fiery spicy chicken fillet wrap with fresh salad and spicy sauce.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/spicy_wrap_v3.png' },
     { name: 'R3. Peri Peri Wrap', desc: 'Flame-marinated peri peri chicken wrap with fresh salad.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/periperi wrap.png' },
     { name: 'R4. Lamb Doner Wrap', desc: 'Tender lamb doner inside a soft tortilla wrap with salad.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/lamb doner.png' },
     { name: 'R5. Veggi Wrap', desc: 'Healthy vegetable wrap filled with fresh salad and savory sauce.', price: '4.50', mealPrice: '5.99', image: '/images/Wrap/veggi wrap.png' },
@@ -45,15 +45,15 @@ const menuData = {
   ],
   box: [
     { name: '1. Classic Fillet Combo', desc: 'Chicken fillet burger, 1 piece of crispy chicken, regular fries, a drink, and baked beans.', price: '6.99', image: '/images/Box meal/1.png', popular: true },
-    { name: '2. Wrap & Wings Combo', desc: 'Chicken wrap, 3 pieces of wings, regular fries, and a drink.', price: '6.99', image: '/images/Box meal/2.png' },
+    { name: '2. Wrap & Wings Combo', desc: 'Chicken wrap, 3 pieces of wings, regular fries, and a drink.', price: '6.99', image: '/images/Box meal/Meal_2_v5.png' },
     { name: '3. Crispy Choice Combo', desc: '1 piece of crispy chicken, 3 pieces of wings, 3 strips, regular fries, and a drink.', price: '5.99', image: '/images/Box meal/3.3.png' },
-    { name: '4. Peri Peri Flame Combo', desc: 'Peri peri burger, 3 wings, fresh coleslaw, regular fries, and a drink.', price: '7.99', image: '/images/Box meal/4.png' },
-    { name: '5. Strips Burger Combo', desc: 'Chicken burger, 3 strips, regular fries, and a drink.', price: '7.49', image: '/images/Box meal/5.png' },
-    { name: '6. Crunch Feast Box', desc: 'Fillet chicken burger, 3 wings, 1 chicken piece, 1 piece of cake, regular fries, and a drink.', price: '8.99', image: '/images/Box meal/6.png' },
+    { name: '4. Peri Peri Flame Combo', desc: 'Peri peri burger, 3 wings, fresh coleslaw, regular fries, and a drink.', price: '7.99', image: '/images/Box meal/Meal_4_v8.png' },
+    { name: '5. Strips Burger Combo', desc: 'Chicken burger, 3 strips, regular fries, and a drink.', price: '7.49', image: '/images/Box meal/Meal_5_v4.png' },
+    { name: '6. Crunch Feast Box', desc: 'Fillet chicken burger, 3 wings, 1 chicken piece, 1 piece of cake, regular fries, and a drink.', price: '8.99', image: '/images/Box meal/Meal_6_v5.png' },
     { name: '24. Noodle Fillet Box', desc: 'Stir-fried noodles with chopped fillet chicken breast pieces and a drink.', price: '6.99', image: '/images/Noodles/Meal 1.1.png' },
     { name: '25. Noodle Peri Box', desc: 'Stir-fried noodles with sliced flame-grilled peri peri chicken and a drink.', price: '6.99', image: '/images/Noodles/Meal 1.2.png' },
-    { name: '26. Rice Fillet Box', desc: 'Seasoned savory rice topped with chopped fillet chicken breast pieces and a drink.', price: '6.99', image: '/images/Noodles/Meal 2.png' },
-    { name: '27. Rice Peri Box', desc: 'Seasoned savory rice topped with flame-grilled peri peri chicken and a drink.', price: '6.99', image: '/images/Noodles/Meal 3.png' }
+    { name: '26. Rice Fillet Box', desc: 'Seasoned savory rice topped with chopped fillet chicken breast pieces and a drink.', price: '6.99', image: '/images/Noodles/Meal_2_v4.png' },
+    { name: '27. Rice Peri Box', desc: 'Seasoned savory rice topped with flame-grilled peri peri chicken and a drink.', price: '6.99', image: '/images/Noodles/Meal_3_v4.png' }
   ],
   peri: [
     { name: 'D1. Whole Peri Chicken', desc: 'Flame-grilled whole peri peri chicken, served with salad, regular fries, and a drink.', price: '10.99', mealPrice: '13.99', image: '/images/Peri Peri/D.png', popular: true },
@@ -163,7 +163,7 @@ const Menu = () => {
         <div className="section-header text-center">
           <div className="section-label">What We Serve</div>
           <h2 className="section-title">Full Menu,<br />Every Day.</h2>
-          <p className="section-sub mx-auto">Burgers · Chicken · Wraps · Box & Rice Meals · Peri Peri · Family Feasts · Loaded Fries · Shakes & Smoothies · Extras & Sides</p>
+          <p className="section-sub mx-auto menu-sub-desc">Burgers · Chicken · Wraps · Box & Rice Meals · Peri Peri · Family Feasts · Loaded Fries · Shakes & Smoothies · Extras & Sides</p>
         </div>
 
         <div className="menu-tabs">
