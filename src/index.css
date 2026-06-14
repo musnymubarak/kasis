@@ -348,6 +348,15 @@ h1, h2, h3, h4 {
   gap: 60px;
 }
 
+.hero-badge-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.show-mobile {
+  display: none !important;
+}
+
 .hero-badge {
   display: inline-block;
   background-color: var(--yellow);
@@ -396,8 +405,11 @@ h1, h2, h3, h4 {
     display: contents; /* Elevate inner items to be direct children of hero-inner for custom ordering */
   }
 
-  .hero-badge {
+  .hero-badge-container {
     order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero-title {
@@ -426,8 +438,14 @@ h1, h2, h3, h4 {
     margin-bottom: 40px; /* Adds premium vertical space after the food visual before selectors */
   }
 
-  .hero-selectors {
+  .hero-actions {
     order: 5;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .hero-selectors {
+    order: 6;
     justify-content: center;
     gap: 14px;
   }
@@ -439,11 +457,6 @@ h1, h2, h3, h4 {
   .hero-selector img {
     width: 56px;
     height: 56px;
-  }
-
-  .hero-actions {
-    order: 6;
-    justify-content: center;
   }
 
   .hero-stats {
@@ -859,6 +872,30 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 600px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile {
+    display: inline-flex !important;
+  }
+  .hero-mobile-see-menu {
+    font-size: clamp(16px, 4vw, 20px) !important;
+    padding: 16px 48px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 10px 25px rgba(227, 28, 36, 0.3) !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 24px !important;
+    width: 95% !important;
+    max-width: 380px !important;
+    justify-content: center !important;
+  }
+  .hero-actions .btn-outline {
+    width: 75% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
   .section {
     padding: 40px 0;
   }
@@ -1815,7 +1852,7 @@ h1, h2, h3, h4 {
 /* Scroll To Top */
 .scroll-to-top {
   position: fixed;
-  bottom: 30px;
+  bottom: 95px;
   right: 30px;
   width: 50px;
   height: 50px;
@@ -1834,7 +1871,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 600px) {
   .scroll-to-top {
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
     width: 45px;
     height: 45px;
@@ -3162,6 +3199,48 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   color: var(--red);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-decoration: none;
+  border: 2px solid var(--white);
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+  background-color: #20ba5a;
+  color: #fff;
+}
+
+.whatsapp-icon {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  }
 }
 
 

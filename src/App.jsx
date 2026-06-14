@@ -12,6 +12,7 @@ import CookiePolicyPage from './pages/CookiePolicyPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import CookieConsent from './components/CookieConsent';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,6 +44,7 @@ function App() {
         <Footer />
         <ScrollToTop />
         <CookieConsent />
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );

@@ -159,14 +159,19 @@ const Hero = () => {
       
       <div className="container hero-inner">
         <div className="hero-content">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="hero-badge"
-          >
-            🔥 Now Open in Carshalton
-          </motion.div>
+          <div className="hero-badge-container">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="hero-badge hide-mobile"
+            >
+              🔥 Now Open in Carshalton
+            </motion.div>
+            <Link to="/menu" className="btn btn-primary hero-mobile-see-menu show-mobile">
+              🍗 See Menu
+            </Link>
+          </div>
           
           {/* Animated title */}
           <AnimatePresence mode="wait" custom={direction}>
@@ -214,7 +219,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hero-actions"
           >
-            <Link to="/menu" className="btn btn-primary">🍗 See Menu</Link>
+            <Link to="/menu" className="btn btn-primary hide-mobile">🍗 See Menu</Link>
             <a href="tel:07909045300" className="btn btn-outline">Call & Order</a>
           </motion.div>
 
